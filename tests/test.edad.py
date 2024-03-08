@@ -13,10 +13,21 @@ from src.edad import evaluar
 
 class TestEdad(unittest.TestCase):
     def test2000Enero1(self):
-        valor_esperado = "Usted tiene 24 años"
-        valor_actual = evaluar(1, 1, 2024)
-        self.assertEqual(valor_esperado, valor_actual)
-    
+        valorEsperado = "Su edad es: 24 años."
+        valorActual = evaluar(1, 1, 2000)
+        self.assertEqual(valorEsperado, valorActual)
+
+    def test1985Febrero10(self):
+        valorEsperado = "Su edad es: 39 años."
+        valorActual = evaluar(10, 2, 1985)
+        self.assertEqual(valorEsperado, valorActual)
+
+    def test2005Diciembre4(self):
+        valorEsperado = "Su edad es: 18 años."
+        valorActual = evaluar(4, 12, 2005)
+        self.assertEqual(valorEsperado, valorActual)
+
+    # Agrega tus otros casos de prueba aquí
     # TODO: Agrega tus otros casos de prueba aquí
     
 

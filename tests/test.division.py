@@ -12,15 +12,22 @@ sys.path.append(str(root_path))
 from src.division import evaluar
 
 class TestDivision(unittest.TestCase):
-    def testDivisionExacta(self):
-        valor_esperado = "La división es exacta. \n" \
-                         "Cociente: 2\n" \
-                         "Residuo: 4"
-        valor_actual = evaluar(14, 5)
-        self.assertEqual(valor_esperado, valor_actual)
     
     # TODO: Agrega tus otros casos de prueba aquí
-    
+    def testDivisionExacta(self):
+        valorEsperado = "La división es exacta. \n" \
+                        + "Cociente: 2\n" \
+                        + "Residuo: 0"
+        valorActual = evaluar(14, 7)
+        self.assertEqual(valorEsperado, valorActual)
+
+    def testDivisionNoExacta(self):
+        valorEsperado = "La división no es exacta. \n" \
+                        + "Cociente: 0\n" \
+                        + "Residuo: 1"
+        valorActual = evaluar(1, 4)
+        self.assertEqual(valorEsperado, valorActual)
+
 
 if __name__ == '__main__':
     unittest.main()
